@@ -70,10 +70,16 @@ export default function App() {
 
     setIsLoading(true)
     try {
-      const res = await fetch("/generate", {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/generate`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(values),
+        body: JSON.stringify({
+          // Map to support both server shapes
+          senderUrl: values.senderUrl,
+          recipientUrl: values.recipientUrl,
+          problem: values.problem,
+          solution: values.solution,
+        }),
       })
 
       if (!res.ok) {
