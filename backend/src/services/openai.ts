@@ -3,7 +3,7 @@ type OpenAIResponse = {
     choices?: { message?: { content?: string } }[];
   };
   
-  export async function generateJson(prompt: string): Promise<{ messages: string[] }> {
+  export async function generateJson(prompt: string, options?: { temperature?: number; maxTokens?: number }): Promise<{ messages: string[] }> {
     const key = process.env.OPENAI_API_KEY || "";
     if (!key) throw new Error("OPENAI_API_KEY missing");
   
@@ -25,8 +25,8 @@ type OpenAIResponse = {
             { role: "user", content: prompt }
           ],
           response_format: { type: "json_object" },
-          temperature: 0.7,
-          max_tokens: 350
+          temperature: options?.temperature ?? 0.7,
+          max_tokens: options?.maxTokens ?? 350
         })
       });
   

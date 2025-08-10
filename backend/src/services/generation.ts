@@ -30,12 +30,24 @@ const generateIcebreakersLLM = async (input: {
   recipient: MiniProfile;
   problem: string;
   solution: string;
-}): Promise<string[]> => {
+  tone?: string;
+  maxChars?: number;
+  goal?: string;
+  category?: string;
+  language?: string;
+  temperature?: number;
+  rewriteIndex?: number;
+}): Promise<string[] | string> => {
   const cleanInput = {
     sender: pruneProfile(input.sender),
     recipient: pruneProfile(input.recipient),
     problem: String(input.problem || "").slice(0, 500).trim(),
     solution: String(input.solution || "").slice(0, 500).trim(),
+    tone: input.tone || "neutral",
+    maxChars: input.maxChars || 280,
+    goal: input.goal || "conversation",
+    category: input.category || "auto",
+    language: input.language || "auto",
   };
 
   const prompt = buildPrompt(cleanInput);
