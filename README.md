@@ -1,30 +1,37 @@
-# Linkedin message generator
+# ColdMessage
 
-*Automatically synced with your [v0.dev](https://v0.dev) deployments*
+Generador de mensajes personalizados para LinkedIn usando IA.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/nicoquinteros23s-projects/v0-linkedin-message-generator)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/qgPiFuPYDLI)
+## 🚀 Inicio Rápido
 
-## Overview
+```bash
+# Instalar dependencias
+npm install
+cd backend && npm install
 
-This repository will stay in sync with your deployed chats on [v0.dev](https://v0.dev).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.dev](https://v0.dev).
+# Levantar todo el stack (frontend + backend)
+npm run dev:full
 
-## Deployment
+# O por separado:
+npm run dev          # Frontend (puerto 3000)
+npm run dev:backend  # Backend (puerto 4000)
+```
 
-Your project is live at:
+## 📱 Uso
 
-**[https://vercel.com/nicoquinteros23s-projects/v0-linkedin-message-generator](https://vercel.com/nicoquinteros23s-projects/v0-linkedin-message-generator)**
+1. Completa el formulario con URLs de LinkedIn y contexto
+2. Haz clic en "Generate Messages"
+3. Recibe 3 mensajes personalizados generados por OpenAI
 
-## Build your app
+## 🛠️ Stack
 
-Continue building your app on:
+- **Frontend**: Next.js + React + TypeScript
+- **Backend**: Node.js + Express + TypeScript
+- **IA**: OpenAI GPT
+- **API**: LinkedIn Data API (RapidAPI)
 
-**[https://v0.dev/chat/projects/qgPiFuPYDLI](https://v0.dev/chat/projects/qgPiFuPYDLI)**
+## 🌐 URLs
 
-## How It Works
-
-1. Create and modify your project using [v0.dev](https://v0.dev)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+- Frontend: http://localhost:3000
+- Backend: http://localhost:4000
+- API Docs: http://localhost:4000/health
